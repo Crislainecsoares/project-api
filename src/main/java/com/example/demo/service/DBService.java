@@ -17,7 +17,7 @@ public class DBService {
     @Autowired // obter o LivroRepository que é gerado automaticamente pelo Spring
     private LivroRepository livroRepository;
 
-    public void DatabaseInstance() {
+    public void DataBaseInstance() {
 
         Categoria categoria1 = new Categoria(null, "Casa", "Pato" );
 
