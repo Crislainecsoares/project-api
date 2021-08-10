@@ -1,8 +1,10 @@
 package com.example.demo.domain;
 
 import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +18,13 @@ public class Categoria implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @NotEmpty(message = "Campo nome é obrigatório")
+    @Length(min = 3, max = 100 , message = "O Campo nome deve possuir entre 3 ou 100 caracteres")
     private String nome;
+
+    @NotEmpty(message = "Campo descrição é obrigatório")
+    @Length(min = 3, max = 200 , message = "O Campo descrição deve possuir entre 3 ou 100 caracteres")
     private String descricao;
 
     @OneToMany(mappedBy = "categoria")

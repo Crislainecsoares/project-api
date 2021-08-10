@@ -21,7 +21,7 @@ public class DBService {
 
         Categoria categoria1 = new Categoria(null, "Casa", "Pato" );
 
-        Livro livro1 = new Livro(null, "My Book", "Somewhere", "Texto", categoria1);
+        Livro livro1 = new Livro(null, "My Book", "Somewhere", "Textoooooooooo", categoria1);
 
         categoria1.getLivros().addAll(Arrays.asList(livro1));
 
