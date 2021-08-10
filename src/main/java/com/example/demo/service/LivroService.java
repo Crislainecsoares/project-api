@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.domain.Categoria;
 import com.example.demo.domain.Livro;
 import com.example.demo.exceptions.ObjectNotFoundException;
 import com.example.demo.repositories.LivroRepository;
@@ -39,5 +40,12 @@ public class LivroService {
         newObj.setNome_autor(obj.getNome_autor());
         newObj.setTexto(obj.getTexto());
 
+    }
+
+    public Livro create(Integer id_categoria, Livro obj) {
+        obj.setId(null);
+        Categoria categoria = categoriaService.findById(id_categoria);
+        obj.setCategoria(categoria);
+        return livroRepository.save(obj);
     }
 }
